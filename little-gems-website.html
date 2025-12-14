@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Little Gems Kindergarten - Papakura, Auckland</title>
+    <title>Little Gems Childcare - Papakura, Auckland</title>
     <style>
         * {
             margin: 0;
@@ -89,7 +89,10 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%), url('images/Headerbackground.png');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: multiply;
             color: white;
             padding: 4rem 2rem 5rem;
             text-align: center;
@@ -104,8 +107,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
-            opacity: 0.5;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1;
         }
 
         .hero-content {
@@ -482,6 +485,33 @@
             margin-top: 4rem;
         }
 
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: white;
+            color: #667eea;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -559,15 +589,17 @@
         <nav>
             <div class="logo-container">
                 <img src="images/LittleGemsLogo.webp" alt="Little Gems Logo" class="logo">
-                <div class="site-title">Little Gems</div>
+                <div class="site-title">Little Gems Childcare</div>
             </div>
             <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
                 ☰
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                <!-- <li><a href="#home" onclick="closeMenu()">Home</a></li> -->
                 <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="our-philosophy.html">Our Philosophy</a></li>
                 <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
+                <li><a href="staff.html">Staff</a></li>
                 <li><a href="contact-us.html">Contact Us</a></li>
             </ul>
         </nav>
@@ -584,31 +616,35 @@
         </div>
         
         <div class="hero-content">
-            <h1>Welcome to Little Gems Kindergarten</h1>
-            <p>Where Every Child Shines Bright ✨</p>
+            <h1>Welcome to Little Gems Childcare</h1>
+            <p>Nurturing your precious gems ✨</p>
             
             <div class="trust-indicators">
                 <div class="trust-badge">
                     <span class="icon">📚</span>
-                    <span>Ages 6mo - 5yrs</span>
+                    <span>Ages 2 - 6yrs</span>
                 </div>
                 <div class="trust-badge">
                     <span class="icon">🏆</span>
-                    <span>20+ Years Experience</span>
+                    <span>Experienced teachers</span>
                 </div>
                 <div class="trust-badge">
                     <span class="icon">⏰</span>
-                    <span>Mon-Fri 7:30-5:30</span>
+                    <span>Mon-Fri 7:30 am - 6:00 pm</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="icon">🎁</span>
+                    <span>30 hours free for 3 years old</span>
                 </div>
             </div>
             
             <a href="contact-us.html" class="cta-button">Get in Touch</a>
         </div>
         
-        <div class="scroll-indicator" onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth'})">
+        <!-- <div class="scroll-indicator" onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth'})">
             <div class="arrow">↓</div>
             <div class="text">Scroll to explore</div>
-        </div>
+        </div> -->
     </section>
 
     <section>
@@ -616,7 +652,7 @@
         <div class="features">
             <div class="feature-card">
                 <div class="feature-icon">👶</div>
-                <h3>Ages 6 Months - 5 Years</h3>
+                <h3>Ages 2 - 6 Years</h3>
                 <p>We provide nurturing care for infants, toddlers, and preschoolers, supporting each developmental stage.</p>
             </div>
             <div class="feature-card">
@@ -641,20 +677,80 @@
         <h2 class="section-title">About Little Gems</h2>
         <div class="about-content">
             <div class="about-text">
-                <h3>Nurturing Young Minds in Papakura</h3>
-                <p>At Little Gems Kindergarten, we believe every child is precious and unique. Our kindergarten provides a warm, nurturing environment where children aged 6 months to 5 years can grow, learn, and shine.</p>
-                <p>Located in the heart of Papakura, Auckland, we offer a play-based curriculum that supports children's natural curiosity and love of learning. Our experienced educators are passionate about early childhood education and dedicated to helping each child reach their full potential.</p>
-                <p>We focus on building strong foundations in social skills, emotional development, and early literacy while ensuring every day is filled with joy, laughter, and discovery.</p>
+                <h3>Welcome to Little Gems Childcare</h3>
+                <p>Welcome to Little Gems Childcare, a warm and nurturing early learning centre where every child is treasured, valued, and supported to shine. We provide education and care for children 2 to 6 years old, offering a safe, supportive, and home-like environment where tamariki can learn and grow.</p>
                 
-                <div class="info-box">
+                <p>Located in the heart of Papakura, Auckland, we offer a play-based curriculum that supports children's natural curiosity and love of learning. Our experienced educators are passionate about early childhood education and dedicated to helping each child reach their full potential.</p>
+                
+                <p>We believe that each child is a "Little Gem" with unique strengths, interests, and potential — and it is our privilege to help them grow.</p>
+                
+                <h3 style="margin-top: 2rem;">Our Teaching Philosophy</h3>
+                <p>Our teaching philosophy is guided by Te Whāriki, the New Zealand Early Childhood Curriculum, emphasising belonging, wellbeing, contribution, communication, and exploration. Through playful learning, creativity, music, outdoor experiences, and hands-on activities, we encourage tamariki to explore, question, and discover the world around them.</p>
+                
+                <p>We celebrate culture, identity, and diversity, embracing the rich values of te ao Māori and weaving them into our daily practices. Our centre is a place where everyone—children, families, and staff—feels welcomed, respected, and valued.</p>
+                
+                <p>At Little Gems, we nurture children's confidence, spark their curiosity, and help them build strong foundations for lifelong learning.</p>
+                
+                <!-- <div class="info-box">
                     <h3>📍 Our Location</h3>
                     <p>88 Opaheke Road, Papakura<br>
                     Auckland, New Zealand 2113</p>
-                </div>
+                </div> -->
             </div>
             <div class="about-image">
                 <img src="images/LittleGemsLogo.webp" alt="Little Gems Colorful Tree">
             </div>
+        </div>
+        
+        <h3 class="section-title" style="margin-top: 3rem; font-size: 2rem;">Why Choose Little Gems?</h3>
+        
+        <div class="features" style="margin-top: 2rem;">
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Age-Appropriate Curriculum (2-6 Years)</h3>
+                <p>Our curriculum supports every stage of development, sparks curiosity, encourages independence, and helps build essential social, emotional, and cognitive skills. With small group learning, each child receives personalised attention to thrive and grow.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏡</div>
+                <h3>Home Away From Home</h3>
+                <p>A warm, welcoming, and nurturing environment where every child is treated with aroha and respect and feels a true sense of belonging. We foster strong whānau partnerships, encouraging open communication and involvement.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌳</div>
+                <h3>Outdoor Learning & Play</h3>
+                <p>Our outdoor environments are safe, fun, and challenging, designed to promote exploration, physical activity, and confidence. Children develop gross motor skills, teamwork, problem-solving, and a love for nature as they play and learn outdoors.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👩‍🏫</div>
+                <h3>Experienced & Passionate Kaiako</h3>
+                <p>Our experienced kaiako are deeply committed to nurturing each child's growth, inspiring their curiosity, building confidence, and helping them reach their full potential.</p>
+            </div>
+            <div class="feature-card" style="grid-column: span 2;">
+                <div class="feature-icon">🌍</div>
+                <h3>Celebrating Culture & Diversity</h3>
+                <p>"At Little Gems we are one family with many cultures. We embrace inclusive practices that celebrate te ao Māori, individual identity, and the rich diversity of cultures around us. We use culture as a teaching tool, recognising and celebrating events from all cultural backgrounds. This helps our tamariki develop a deeper understanding of their own culture while learning to appreciate and respect the cultures of others."</p>
+            </div>
+        </div>
+        
+        <h3 class="section-title" style="margin-top: 3rem; font-size: 2rem;">Together We Grow Your Precious Gems — Ka Tupu Ngātahi</h3>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title">What Our Service Provides</h2>
+        <div class="feature-card" style="max-width: 900px; margin: 2rem auto;">
+            <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; text-align: left;">
+                <li style="padding: 0.5rem 0; font-size: 1.1rem;">✓ Nappies Change</li>
+                <li style="padding: 0.5rem 0; font-size: 1.1rem;">✓ Suncream</li>
+                <li style="padding: 0.5rem 0; font-size: 1.1rem;">✓ Music</li>
+                <li style="padding: 0.5rem 0; font-size: 1.1rem;">✓ Art</li>
+                <li style="padding: 0.5rem 0; font-size: 1.1rem;">✓ Cultural Celebrations</li>
+                <li style="padding: 0.5rem 0; font-size: 1.1rem;">✓ Excursions</li>
+                <li style="padding: 0.5rem 0; font-size: 1.1rem;">✓ Gardening</li>
+                <li style="padding: 0.5rem 0; font-size: 1.1rem;">✓ Mindfulness Program</li>
+                <li style="padding: 0.5rem 0; font-size: 1.1rem;">✓ School Readiness</li>
+                <li style="padding: 0.5rem 0; font-size: 1.1rem;">✓ Community Connections</li>
+                <li style="padding: 0.5rem 0; font-size: 1.1rem;">✓ Spacious Indoor and Outdoor Play Environments</li>
+            </ul>
         </div>
     </section>
 
@@ -732,20 +828,34 @@
                         Auckland, New Zealand 2113
                     </div>
                 </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <img src="images/Facebook.jpg" alt="Facebook" style="width: 30px; height: 30px; object-fit: contain;">
+                    </div>
+                    <div>
+                        <strong>Facebook</strong><br>
+                        <a href="https://www.facebook.com/people/Little-Gems-Childcare/61550983952273/" target="_blank">Visit our Facebook page</a>
+                    </div>
+                </div>
             </div>
             
             <div class="contact-card">
                 <h3>Visit Us</h3>
                 <p>We'd love to show you around! Contact us to arrange a visit and meet our team. Come see our beautiful facilities and learn more about how Little Gems can be the perfect place for your child to grow and learn.</p>
                 <br>
-                <p><strong>We look forward to welcoming your little gem to our kindergarten family!</strong></p>
+                <p><strong>We are excited to welcome your little gem to our Little Gems Whānau!</strong></p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Little Gems Kindergarten. All rights reserved.</p>
+        <p>&copy; 2025 Little Gems Childcare. All rights reserved.</p>
         <p>88 Opaheke Road, Papakura, Auckland, New Zealand</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/people/Little-Gems-Childcare/61550983952273/" target="_blank" class="social-icon" aria-label="Visit our Facebook page">
+                <img src="images/Facebook.jpg" alt="Facebook" style="width: 24px; height: 24px; object-fit: contain;">
+            </a>
+        </div>
     </footer>
 
     <script>

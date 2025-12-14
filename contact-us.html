@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Little Gems Kindergarten</title>
+    <title>Contact Us - Little Gems Childcare</title>
     <style>
         * {
             margin: 0;
@@ -266,6 +266,33 @@
             margin-top: 4rem;
         }
 
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: white;
+            color: #667eea;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+        }
+
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
@@ -387,16 +414,17 @@
         <nav>
             <div class="logo-container">
                 <img src="images/LittleGemsLogo.webp" alt="Little Gems Logo" class="logo">
-                <div class="site-title">Little Gems</div>
+                <div class="site-title">Little Gems Childcare</div>
             </div>
             <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
                 ☰
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="little-gems-website.html">Home</a></li>
-                <li><a href="little-gems-website.html#about">About</a></li>
-                <li><a href="little-gems-website.html#gallery">Gallery</a></li>
-                <li><a href="contact-us.html" class="active">Contact Us</a></li>
+                <li><a href="little-gems-website.html#about" onclick="closeMenu()">About</a></li>
+                <li><a href="our-philosophy.html">Our Philosophy</a></li>
+                <li><a href="little-gems-website.html#gallery" onclick="closeMenu()">Gallery</a></li>
+                <li><a href="staff.html">Staff</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
@@ -528,8 +556,13 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Little Gems Kindergarten. All rights reserved.</p>
+        <p>&copy; 2025 Little Gems Childcare. All rights reserved.</p>
         <p>88 Opaheke Road, Papakura, Auckland, New Zealand</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/people/Little-Gems-Childcare/61550983952273/" target="_blank" class="social-icon" aria-label="Visit our Facebook page">
+                <img src="images/Facebook.jpg" alt="Facebook" style="width: 24px; height: 24px; object-fit: contain;">
+            </a>
+        </div>
     </footer>
 
     <script>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Philosophy - Little Gems Childcare</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: white;
+            padding: 5px;
+        }
+
+        .site-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%), url('images/Philosophy.png');
+            background-size: 100% auto;
+            background-position: top center;
+            background-blend-mode: multiply;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 4rem 0 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 400px;
+            width: 100%;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .philosophy-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .philosophy-content h3 {
+            color: #667eea;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .philosophy-content p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .highlight-box h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-top: 4px solid;
+        }
+
+        .feature-card:nth-child(1) { border-top-color: #ff6b6b; }
+        .feature-card:nth-child(2) { border-top-color: #4ecdc4; }
+        .feature-card:nth-child(3) { border-top-color: #ffd93d; }
+        .feature-card:nth-child(4) { border-top-color: #95e1d3; }
+        .feature-card:nth-child(5) { border-top-color: #ff6b6b; }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: white;
+            color: #667eea;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                flex-direction: column;
+                gap: 0;
+                padding: 1rem 0;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                transform: translateY(-120%);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 1rem 2rem;
+                font-size: 1.2rem;
+            }
+
+            .site-title {
+                font-size: 1.3rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="images/LittleGemsLogo.webp" alt="Little Gems Logo" class="logo">
+                <div class="site-title">Little Gems Childcare</div>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+                ☰
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="little-gems-website.html#about" onclick="closeMenu()">About</a></li>
+                <li><a href="our-philosophy.html">Our Philosophy</a></li>
+                <li><a href="little-gems-website.html#gallery" onclick="closeMenu()">Gallery</a></li>
+                <li><a href="staff.html">Staff</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Our Teaching Philosophy</h1>
+            <p>Nurturing Growth Through Te Whāriki & Cultural Celebration ✨</p>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Our Teaching Philosophy</h2>
+        
+        <div class="philosophy-content">
+            <p>At Little Gems Childcare, our teaching philosophy is rooted in respect, nurturing, and empowerment. We believe that each child is a "Little Gem" with unique strengths, interests, and potential — and it is our privilege to help them grow.</p>
+
+            <div class="highlight-box">
+                <h3>Te Whāriki - The New Zealand Early Childhood Curriculum</h3>
+                <p>Our teaching philosophy is guided by Te Whāriki, the New Zealand Early Childhood Curriculum, which emphasises five key strands:</p>
+                <ul style="margin-top: 1rem; padding-left: 2rem; line-height: 2;">
+                    <li><strong>Belonging</strong> - Creating a place where everyone feels welcomed and valued</li>
+                    <li><strong>Wellbeing</strong> - Nurturing physical, emotional, and mental health</li>
+                    <li><strong>Contribution</strong> - Encouraging active participation and collaboration</li>
+                    <li><strong>Communication</strong> - Supporting language development and expression</li>
+                    <li><strong>Exploration</strong> - Fostering curiosity and discovery</li>
+                </ul>
+            </div>
+
+            <h3>Play-Based Learning</h3>
+            <p>Through playful learning, creativity, music, outdoor experiences, and hands-on activities, we encourage tamariki to explore, question, and discover the world around them. We understand that play is the primary way children learn, and we provide rich, engaging environments that support their natural curiosity.</p>
+
+            <h3>Cultural Celebration & Identity</h3>
+            <p>We celebrate culture, identity, and diversity, embracing the rich values of te ao Māori and weaving them into our daily practices. Our centre is a place where everyone—children, families, and staff—feels welcomed, respected, and valued.</p>
+            
+            <p>At Little Gems we are one family with many cultures. We embrace inclusive practices that celebrate te ao Māori, individual identity, and the rich diversity of cultures around us. We use culture as a teaching tool, recognising and celebrating events from all cultural backgrounds.</p>
+
+            <h3>Nurturing Confidence & Curiosity</h3>
+            <p>At Little Gems, we nurture children's confidence, spark their curiosity, and help them build strong foundations for lifelong learning. Our experienced kaiako are deeply committed to nurturing each child's growth, inspiring their curiosity, building confidence, and helping them reach their full potential.</p>
+
+            <h3>Partnership with Whānau</h3>
+            <p>We foster strong whānau partnerships, encouraging open communication and involvement. We believe that families are children's first and most important teachers, and we work collaboratively to support each child's learning journey.</p>
+        </div>
+
+        <h3 class="section-title" style="margin-top: 4rem; font-size: 2rem;">Our Core Values</h3>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">❤️</div>
+                <h3>Aroha (Love & Compassion)</h3>
+                <p>We treat every child with aroha and respect, creating a warm, nurturing environment where they feel safe to explore and learn.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌟</div>
+                <h3>Mana (Dignity & Respect)</h3>
+                <p>We honor each child's mana, recognizing their unique identity, strengths, and cultural background.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤝</div>
+                <h3>Whanaungatanga (Relationships)</h3>
+                <p>We build strong, trusting relationships with children, families, and our community.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌱</div>
+                <h3>Ako (Learning Together)</h3>
+                <p>We embrace reciprocal learning, where kaiako and tamariki learn from each other.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Kaitiakitanga (Guardianship)</h3>
+                <p>We teach children to care for their environment, people, and culture, fostering responsible global citizens.</p>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 3rem;">
+            <h3>Together We Grow Your Precious Gems — Ka Tupu Ngātahi</h3>
+            <p>This philosophy guides everything we do at Little Gems. We are committed to providing high-quality early childhood education that honors each child's individuality while preparing them for a bright future filled with learning, discovery, and joy.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Little Gems Childcare. All rights reserved.</p>
+        <p>88 Opaheke Road, Papakura, Auckland, New Zealand</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/people/Little-Gems-Childcare/61550983952273/" target="_blank" class="social-icon" aria-label="Visit our Facebook page">
+                <img src="images/Facebook.jpg" alt="Facebook" style="width: 24px; height: 24px; object-fit: contain;">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+        }
+    </script>
+</body>
+</html>
