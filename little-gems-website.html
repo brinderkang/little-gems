@@ -479,6 +479,118 @@
             background: #999;
         }
 
+        .reviews-carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .reviews-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .review-card {
+            min-width: 100%;
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            border-left: 4px solid #ffd93d;
+            box-sizing: border-box;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .reviewer-initial {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .review-stars {
+            color: #ffd93d;
+            font-size: 1.2rem;
+            white-space: nowrap;
+        }
+
+        .review-text {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        .review-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .review-nav-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .review-nav-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5);
+        }
+
+        .review-indicators {
+            display: flex;
+            gap: 10px;
+        }
+
+        .review-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            padding: 0;
+        }
+
+        .review-dot.active {
+            background: #667eea;
+            width: 30px;
+            border-radius: 6px;
+        }
+
         footer {
             background: #2d3748;
             color: white;
@@ -582,6 +694,22 @@
             .trust-badge {
                 font-size: 0.85rem;
                 padding: 0.6rem 1rem;
+            }
+
+            .review-card {
+                padding: 2rem;
+            }
+
+            .review-nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.3rem;
+            }
+
+            .reviewer-initial {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -802,6 +930,109 @@
         </div>
     </section>
 
+    <section id="reviews">
+        <h2 class="section-title">What Parents Say</h2>
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.5rem; color: #ffd93d;">
+                <span>⭐⭐⭐⭐⭐</span>
+                <span style="color: #667eea; font-weight: bold; font-size: 2rem;">4.8/5</span>
+            </div>
+            <p style="color: #666; margin-top: 0.5rem;">Based on 23 Google Reviews</p>
+        </div>
+        
+        <div class="reviews-carousel">
+            <div class="reviews-track" id="reviewsTrack">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-initial">J</div>
+                            <div>
+                                <strong>Jessie Halamamao</strong>
+                                <div style="color: #666; font-size: 0.9rem;">April 2025</div>
+                            </div>
+                        </div>
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="review-text">"What an awesome loving Whaea to all you Little Gem Centre - the best Centre I have ever come across. Children are taught fairness, every child is acknowledged from who they are, always celebrated cultural events. Such a beautiful Centre I would recommend this Centre for our tamariki here in Papakura!"</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-initial">A</div>
+                            <div>
+                                <strong>Anne Turoa</strong>
+                                <div style="color: #666; font-size: 0.9rem;">January 2025</div>
+                            </div>
+                        </div>
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="review-text">"The most down to Earth, loving, caring, welcoming and helpful lot of teachers. My daughter is picky with her environment and people but she absolutely loved it here, loved her teachers and all the friends she made over the years! She's now graduated kindy and off to big school. I'm so grateful we found Little Gems, we're going to miss everyone so much!"</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-initial">R</div>
+                            <div>
+                                <strong>Reena Singh</strong>
+                                <div style="color: #666; font-size: 0.9rem;">August 2024</div>
+                            </div>
+                        </div>
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="review-text">"Exceptional Care and Nurturing Environment! The facility is always clean and well-organized, creating a welcoming and safe space for the kids. The staff are incredibly friendly, professional, and attentive. They genuinely care about each child and their individual needs. I highly recommend this center to any parent looking for a caring and enriching environment for their child."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-initial">K</div>
+                            <div>
+                                <strong>Kamal Virdi</strong>
+                                <div style="color: #666; font-size: 0.9rem;">July 2024</div>
+                            </div>
+                        </div>
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="review-text">"We are very grateful to Little Gem for helping my child with learning his abilities and knowledge which will help him for his step of life. And also for making such a good friend who loves and care about each other and we were so happy to see him with his friends on graduation. All this is possible because of teachers at Little Gem."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-initial">A</div>
+                            <div>
+                                <strong>Amritpal Singh</strong>
+                                <div style="color: #666; font-size: 0.9rem;">December 2023</div>
+                            </div>
+                        </div>
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="review-text">"I am very happy with the quality of care and education that Little Gems provides for my child. The staff are friendly, professional, and passionate about their work. They create a warm and welcoming environment where children can learn and grow through play and exploration. I highly recommend Little Gems to anyone looking for a nurturing and stimulating childcare service."</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-nav">
+            <button class="review-nav-btn" onclick="moveReview(-1)" aria-label="Previous review">‹</button>
+            <div class="review-indicators">
+                <button class="review-dot active" onclick="currentReview(0)"></button>
+                <button class="review-dot" onclick="currentReview(1)"></button>
+                <button class="review-dot" onclick="currentReview(2)"></button>
+                <button class="review-dot" onclick="currentReview(3)"></button>
+                <button class="review-dot" onclick="currentReview(4)"></button>
+            </div>
+            <button class="review-nav-btn" onclick="moveReview(1)" aria-label="Next review">›</button>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+            <a href="https://www.littlies.nz/centres/little-gems-childcare-45817" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.9rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1rem; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 20px rgba(102, 126, 234, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(102, 126, 234, 0.3)';">
+                View All Reviews on Littlies.nz →
+            </a>
+        </div>
+    </section>
+
     <section id="contact">
         <h2 class="section-title">Get in Touch</h2>
         <div class="contact-grid">
@@ -819,7 +1050,7 @@
                     <div>
                         <strong>Email</strong><br>
 <!-- CHANGE YOUR ACTUAL EMAIL ADDRESS BELOW -->
-                        <a href="mailto:brinderjeetkang@gmail.com">littlegemschildcare.papakura@gmail.com</a>
+                        <a href="mailto:littlegemschildcare.papakura@gmail.com">littlegemschildcare.papakura@gmail.com</a>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -894,6 +1125,41 @@
         setInterval(() => {
             moveSlide(1);
         }, 5000);
+
+        // Reviews Carousel
+        let currentReviewIndex = 0;
+        const reviewCards = document.querySelectorAll('#reviewsTrack .review-card');
+        const reviewDots = document.querySelectorAll('.review-dot');
+        const totalReviews = reviewCards.length;
+
+        function updateReviewCarousel() {
+            const reviewsTrack = document.getElementById('reviewsTrack');
+            reviewsTrack.style.transform = `translateX(-${currentReviewIndex * 100}%)`;
+            
+            reviewDots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentReviewIndex);
+            });
+        }
+
+        function moveReview(direction) {
+            currentReviewIndex += direction;
+            if (currentReviewIndex < 0) {
+                currentReviewIndex = totalReviews - 1;
+            } else if (currentReviewIndex >= totalReviews) {
+                currentReviewIndex = 0;
+            }
+            updateReviewCarousel();
+        }
+
+        function currentReview(index) {
+            currentReviewIndex = index;
+            updateReviewCarousel();
+        }
+
+        // Auto-play reviews carousel
+        setInterval(() => {
+            moveReview(1);
+        }, 7000);
 
         // Mobile menu toggle
         function toggleMenu() {
